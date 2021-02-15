@@ -4,6 +4,10 @@ from user import User
 import random
 
 
+def verify_user(user_name, password):
+    pass
+
+
 def create_user(fname, lname, uname, pwd):
     new_user = User(fname, lname, uname, pwd)
     return new_user
@@ -30,8 +34,8 @@ def save_credentials(credential):
     credential.save_credential()
 
 
-def delete_credentials(user):
-    user.delete_credential()
+def delete_credentials(credential):
+    credential.delete_credential()
 
 
 def display_credentials():
@@ -71,7 +75,11 @@ def main():
         print("*="*25)
         uname = input("Username: ")
         pwd = input("Password: ")
-        login = ver
+        login = verify_user(uname, pwd)
+        if verify_user == login:
+            print(f"Hello {uname}. Welcome to Password Locker\n")
+    while True:
+        print("Use these short codes: \n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n")
 
 
 if __name__ == '__main__':
