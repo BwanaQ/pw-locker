@@ -81,4 +81,4 @@ If you have any question or contributions, please email me at [mikeycharlesm7@gm
 ## License
 
 - _MIT License:_
-- Copyright (c) 2019 **Owiti Charles**
+- Copyright (c) 2019 **Tom Hunja**
