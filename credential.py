@@ -1,4 +1,6 @@
 import pyperclip
+import random
+import string
 
 
 class Credential:
@@ -40,3 +42,11 @@ class Credential:
     def copy_password(cls, title):
         credential_found = Credential.find_by_title(title)
         pyperclip.copy(credential_found.password)
+
+    def generatePassword(self, stringLength=8):
+        """
+        Generate a 8 character random password string of letters and digits and special characters
+        """
+        password = string.ascii_uppercase + \
+            string.ascii_lowercase + string.digits + "~!@#$%^&*"
+        return ''.join(random.choice(password) for i in range(stringLength))

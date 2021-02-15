@@ -26,3 +26,15 @@ class User:
             if(user.user_name == username and user.password == password):
                 current_user = user.username
             return current_user
+
+    @classmethod
+    def display_users(cls):
+        return cls.user_list
+
+    @classmethod
+    def verify_user(cls, username, password):
+        auth_user = ""
+        for user in cls.user_list:
+            if(user.user_name == username and user.password == password):
+                auth_user = user.username
+        return auth_user
