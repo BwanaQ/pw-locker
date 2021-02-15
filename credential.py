@@ -43,7 +43,8 @@ class Credential:
         credential_found = Credential.find_by_title(title)
         pyperclip.copy(credential_found.password)
 
-    def generatePassword(self, stringLength=8):
+    @classmethod
+    def generatePassword(cls, stringLength=8):
         """
         Generate a 8 character random password string of letters and digits and special characters
         """

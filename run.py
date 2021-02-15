@@ -38,8 +38,40 @@ def display_credentials():
     return Credential.display_credentials()
 
 
+def generate_password():
+    return Credential.generatePassword()
+
+
 def main():
-    pass
+    print("Welcome to Password Locker... \n Please enter one to continue\n SU --- Sign Up\n LI --- Log in")
+    short_code = input("").lower().strip()
+    if short_code == "su":
+        print("Sign Up")
+        print('=*'*25)
+        first_name = input("First name: ")
+        last_name = input("Last name: ")
+        user_name = input("Username: ")
+        while True:
+            print("TP --- To Type Password:\n GP --- To generate Password")
+            password_option = input().lower().strip()
+            if password_option == 'tp':
+                password = input("Enter your password\n")
+                break
+            elif password_option == 'gp':
+                password = generate_password()
+                break
+            else:
+                print("Invalid password option Please try again")
+        save_users(create_user(first_name, last_name, user_name, password))
+        print("*="*42)
+        print(f"Hi {user_name}, welcome to password Locker!!")
+    elif short_code == "li":
+        print("*="*25)
+        print("Enter username and password to log in")
+        print("*="*25)
+        uname = input("Username: ")
+        pwd = input("Password: ")
+        login = ver
 
 
 if __name__ == '__main__':
