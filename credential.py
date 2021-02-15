@@ -8,7 +8,7 @@ class Credential:
     credential_list = []
 
     def __init__(self, title, url, user_name, password):
-        self.title
+        self.title = title
         self.url = url
         self.user_name = user_name
         self.password = password
@@ -21,7 +21,7 @@ class Credential:
 
     @classmethod
     def find_by_title(cls, title):
-        for credential in cls.credentials:
+        for credential in cls.credential_list:
             if credential.title == title:
                 return credential
 
