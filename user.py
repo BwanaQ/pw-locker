@@ -18,3 +18,11 @@ class User:
                 return True
 
         return False
+
+    @classmethod
+    def check_user(cls, username, password):
+        current_user = ''
+        for user in cls.user_list:
+            if(user.user_name == username and user.password == password):
+                current_user = user.username
+            return current_user

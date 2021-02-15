@@ -6,13 +6,13 @@ import unittest
 class TestUser(unittest.TestCase):
     def tearDown(self):
         """
-        resets the user_list array 
+        resets the user_list array
         """
         User.user_list = []
 
     def setUp(self):
         """
-        creates a test User 
+        creates a test User
         """
 
         self.new_user = User("Tom", "Hunja", "BwanaQ", "str0ngpwd")
@@ -39,6 +39,16 @@ class TestUser(unittest.TestCase):
         test_user = User("Test", "user", "test", "dr0w55ap")
         test_user.save_user()
         user_exists = User.user_exist("test")
+        self.assertTrue(user_exists)
+
+    def test_check_user(self):
+        '''
+        Function to test whether the login in function check_user works as expected
+        '''
+        self.new_user.save_user()
+        test_user = User("Test", "user", "test", "dr0w55ap")
+        test_user.save_user()
+        test_user.check_user("test", "dr0w55ap")
 
 
 if __name__ == '__main__':
