@@ -1,3 +1,7 @@
+import random
+import string
+
+
 class User:
     user_list = []
 
@@ -38,3 +42,12 @@ class User:
             if(user.user_name == username and user.password == password):
                 auth_user = user.username
         return auth_user
+
+    @classmethod
+    def generatePassword(cls, stringLength):
+        """
+        Generate a random password string of letters and digits and special characters
+        """
+        password = string.ascii_uppercase + \
+            string.ascii_lowercase + string.digits + "~!@#$%^&*"
+        return ''.join(random.choice(password) for i in range(stringLength))
