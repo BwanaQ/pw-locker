@@ -81,4 +81,4 @@ If you have any question or contributions, please email me at [thunjawax@gmail.c
 ## License
 
 - _MIT License:_
-- Copyright (c) 2019 **Tom Hunja**
+- Copyright (c) 2021 **Tom Hunja**
